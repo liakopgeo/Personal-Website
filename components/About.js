@@ -11,7 +11,7 @@ export default function About() {
           <div className="flex-1">
             <h2 className="text-3xl font-bold mb-4">About Me</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Hi! I'm George, an Electrical & Computer Engineering graduate from the University of Patras,
+              Hi! I&apos;m George, an Electrical & Computer Engineering graduate from the University of Patras,
               passionate about programming, technology, and creating impactful solutions.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
