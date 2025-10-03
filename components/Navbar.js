@@ -28,7 +28,8 @@ export default function Navbar() {
         {/* Resume Button */}
         <a
           href="/GeorgeLiakopoulosCV.pdf"
-          download
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:inline-block rounded-md p-[2px] bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 transition"
         >
           <span className="block rounded-md px-4 py-2 bg-black text-white font-semibold text-sm">
@@ -46,18 +47,19 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden bg-white shadow-md flex flex-col items-center space-y-4 py-4">
+        <ul className="md:hidden bg-white shadow-md flex flex-col items-center space-y-3 py-4">
           {menuLinks.map((link) => (
             <li key={link}>
-              <a href={`#${link}`} className="capitalize hover:text-indigo-600 transition">
+              <a href={`#${link}`} className="capitalize text-sm hover:text-indigo-600 transition">
                 {link}
               </a>
             </li>
           ))}
           <li>
             <a
-              href="/GeorgeLiakopoulosCV.pdf"
-              download
+              href="/GeorgeLiakopoulos_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-md px-4 py-2 bg-black text-white font-semibold hover:bg-gray-800 transition"
             >
               Resume
