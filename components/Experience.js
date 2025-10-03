@@ -15,7 +15,7 @@ export default function Experience() {
     {
       company: "Conference & Cultural Center, University of Patras",
       role: "Audio Visual Support Technician",
-      duration: "Oct 2017 - Sept 2025",
+      duration: "Oct 2017 - Oct 2025",
       description: "Supported cultural events, ensuring seamless \
       technical support during live and hybrid presentations. Performed inspection, maintenance,\
       and troubleshooting of AV equipment, computers, and network connectivity to guarantee reliable\
