@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section
       id="home"
@@ -10,7 +12,7 @@ export default function Hero() {
       {/* --- Background Image --- */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/hero-bg.jpg"   // <-- your uploaded image in /public
+          src="/hero-bg.jpg" // your image in /public
           alt="Background"
           layout="fill"
           objectFit="cover"
@@ -18,7 +20,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* --- Overlay for readability --- */}
+      {/* --- Overlay --- */}
       <div className="absolute inset-0 bg-black/40 -z-5"></div>
 
       {/* --- Hero Content --- */}
@@ -30,12 +32,30 @@ export default function Hero() {
         I&apos;m an Electrical & Computer Engineering graduate from the University of Patras. I love building cool projects and solving challenging problems!
       </p>
 
-      <a
-        href="#projects"
+      <button
+        onClick={() => setIsModalOpen(true)}
         className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 hover:scale-105 shadow-lg transition-transform duration-300 animate-fadeInDelay"
       >
         Explore My Work
-      </a>
+      </button>
+
+      {/* --- Modal --- */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50">
+          <div className="bg-white rounded-2xl p-8 max-w-sm text-center shadow-xl relative">
+            <h2 className="text-2xl font-bold mb-4">Coming Soon!</h2>
+            <p className="text-gray-700 mb-6">
+              I’m currently building my portfolio. Check back soon!
+            </p>
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* --- Tailwind Animations --- */}
       <style jsx>{`
@@ -65,4 +85,5 @@ export default function Hero() {
     </section>
   );
 }
+
 
