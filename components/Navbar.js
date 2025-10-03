@@ -35,7 +35,7 @@ export default function Navbar() {
 
           {/* Resume Button */}
           <a
-            href="/GeorgeLiakopoulosCV.pdf"
+            href="/GeorgeLiakopoulos_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-md p-[2px] bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 transition"
