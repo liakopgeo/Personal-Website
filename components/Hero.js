@@ -9,10 +9,10 @@ export default function Hero() {
       id="home"
       className="relative h-screen flex flex-col justify-center items-center text-center overflow-hidden"
     >
-      {/* --- Background Image --- */}
+      {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/hero-bg.jpg" // your image in /public
+          src="/hero-bg.jpg" // put your image in /public
           alt="Background"
           layout="fill"
           objectFit="cover"
@@ -20,26 +20,26 @@ export default function Hero() {
         />
       </div>
 
-      {/* --- Overlay --- */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 -z-5"></div>
 
-      {/* --- Hero Content --- */}
-      <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 animate-fadeInDown">
+      {/* Hero Content */}
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 animate-fadeInDown">
         Hi, I&apos;m George Liakopoulos
       </h1>
 
-      <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl animate-fadeIn">
+      <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 max-w-xs sm:max-w-md md:max-w-2xl animate-fadeIn">
         I&apos;m an Electrical & Computer Engineering graduate from the University of Patras. I love building cool projects and solving challenging problems!
       </p>
 
       <button
         onClick={() => setIsModalOpen(true)}
-        className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 hover:scale-105 shadow-lg transition-transform duration-300 animate-fadeInDelay"
+        className="px-4 sm:px-6 py-2 sm:py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 hover:scale-105 shadow-lg transition-transform duration-300 animate-fadeInDelay"
       >
         Explore My Work
       </button>
 
-      {/* --- Modal --- */}
+      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50">
           <div className="bg-white rounded-2xl p-8 max-w-sm text-center shadow-xl relative">
@@ -57,7 +57,7 @@ export default function Hero() {
         </div>
       )}
 
-      {/* --- Tailwind Animations --- */}
+      {/* Tailwind Animations */}
       <style jsx>{`
         @keyframes fadeInDown {
           0% { opacity: 0; transform: translateY(-20px); }
@@ -72,18 +72,13 @@ export default function Hero() {
           100% { opacity: 1; transform: translateY(0); }
         }
 
-        .animate-fadeInDown {
-          animation: fadeInDown 1s ease forwards;
-        }
-        .animate-fadeIn {
-          animation: fadeIn 1.5s ease forwards;
-        }
-        .animate-fadeInDelay {
-          animation: fadeInDelay 2s ease forwards;
-        }
+        .animate-fadeInDown { animation: fadeInDown 1s ease forwards; }
+        .animate-fadeIn { animation: fadeIn 1.5s ease forwards; }
+        .animate-fadeInDelay { animation: fadeInDelay 2s ease forwards; }
       `}</style>
     </section>
   );
 }
+
 
 

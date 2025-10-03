@@ -1,12 +1,12 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Experience from "../components/Experience";
 import About from "../components/About";
+import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 
 export default function Home() {
   return (
-    <div>
+    <div className="scroll-smooth">
       <Navbar />
       <Hero />
       <About />
@@ -15,3 +15,4 @@ export default function Home() {
     </div>
   );
 }
+

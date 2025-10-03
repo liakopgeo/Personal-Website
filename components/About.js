@@ -6,8 +6,7 @@ export default function About() {
     <section id="about" className="bg-gray-50 py-12">
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-10 bg-white shadow-lg rounded-2xl p-8 md:p-12">
-          
-          {/* --- Description LEFT --- */}
+          {/* Description */}
           <div className="flex-1">
             <h2 className="text-3xl font-bold mb-4">About Me</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -23,9 +22,8 @@ export default function About() {
               and finding ways to improve user experience through thoughtful design and clean code.
             </p>
 
-            {/* --- Social Links --- */}
-            <div className="mt-6 flex gap-4">
-              {/* LinkedIn */}
+            {/* Social Links */}
+            <div className="mt-6 flex gap-4 flex-wrap">
               <a
                 href="https://www.linkedin.com/in/george-liakopoulos-a6a3b3364/"
                 target="_blank"
@@ -36,7 +34,6 @@ export default function About() {
                 <span className="font-medium">Connect on LinkedIn</span>
               </a>
 
-              {/* GitHub */}
               <a
                 href="https://github.com/liakopgeo"
                 target="_blank"
@@ -49,7 +46,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* --- Photo RIGHT --- */}
+          {/* Photo */}
           <div className="flex-shrink-0">
             <Image
               src="/profile.jpg"
@@ -59,7 +56,6 @@ export default function About() {
               className="rounded-2xl shadow-md object-cover"
             />
           </div>
-
         </div>
       </div>
     </section>
