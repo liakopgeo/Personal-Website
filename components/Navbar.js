@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-xl font-bold">George</div>
+        <div className="text-xl font-bold">George Liakopoulos</div>
 
         {/* Menu + Resume Button */}
         <div className="flex items-center space-x-6">
