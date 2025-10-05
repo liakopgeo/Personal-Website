@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* --- Smooth scrolling + offset for sticky navbar --- */
+html {
+  scroll-behavior: smooth;       /* Smooth scroll for anchor links */
+  scroll-padding-top: 80px;      /* Adjust this to match your navbar height */
+}
+

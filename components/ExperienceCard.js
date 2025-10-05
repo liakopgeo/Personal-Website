@@ -16,3 +16,4 @@ export default function ExperienceCard({ company, role, duration, description })
     </div>
   );
 }
+

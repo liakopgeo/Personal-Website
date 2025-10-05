@@ -7,12 +7,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-screen flex flex-col justify-center items-center text-center overflow-hidden"
+      className="relative min-h-[90vh] flex flex-col justify-center items-center text-center overflow-hidden"
     >
-      {/* --- Background Image --- */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/hero-bg.jpg" // Place your background image in /public
+          src="/hero-bg.jpg"
           alt="Background"
           layout="fill"
           objectFit="cover"
@@ -21,16 +20,13 @@ export default function Hero() {
         />
       </div>
 
-      {/* --- Semi-transparent overlay for contrast --- */}
       <div className="absolute inset-0 bg-black/50 -z-5"></div>
 
-      {/* --- Ultra-smooth gradient fade into white --- */}
       <div
         className="absolute bottom-0 left-0 w-full h-[45vh] sm:h-[50vh] md:h-[55vh] 
         bg-gradient-to-b from-transparent via-white/30 via-50% to-white z-0"
       ></div>
 
-      {/* --- Hero Content --- */}
       <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 relative z-10 drop-shadow-lg">
         Hi, I&apos;m George Liakopoulos
       </h1>
@@ -42,13 +38,11 @@ export default function Hero() {
 
       <button
         onClick={() => setIsModalOpen(true)}
-        className="px-3 sm:px-6 py-2 sm:py-3 bg-indigo-600 text-white rounded-lg 
-        hover:bg-indigo-700 hover:scale-105 shadow-lg transition-transform duration-300 relative z-10"
+        className="px-3 sm:px-6 py-2 sm:py-3 rounded-md border-2 border-[#bf8138] bg-white text-[#434343] font-semibold hover:opacity-90 transition relative z-10"
       >
         Explore My Work
       </button>
 
-      {/* --- Modal (on click "Explore My Work") --- */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 px-4">
           <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-sm text-center shadow-xl relative">
@@ -58,7 +52,7 @@ export default function Hero() {
             </p>
             <button
               onClick={() => setIsModalOpen(false)}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+              className="px-4 py-2 rounded-md border-2 border-[#bf8138] bg-white text-[#434343] font-semibold hover:opacity-90 transition"
             >
               Close
             </button>
@@ -68,6 +62,9 @@ export default function Hero() {
     </section>
   );
 }
+
+
+
 
 
 
