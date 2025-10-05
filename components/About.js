@@ -46,9 +46,9 @@ export default function About() {
           <div className="flex-shrink-0 w-full sm:w-[250px] flex justify-center items-center">
             <div className="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] rounded-full overflow-hidden shadow-md border-2 border-[#bf8138]">
               <img
-                src="/profile.jpg"
+                src="/profile.png"
                 alt="My Photo"
-                className="w-full h-full object-contain scale-90"
+                className="w-full h-full object-contain scale-320"
               />
             </div>
           </div>

@@ -28,8 +28,8 @@ export default function Hero() {
 
       {/* --- Hero Description --- */}
       <p className="relative z-20 text-sm sm:text-base md:text-xl text-gray-200 mb-6 max-w-xs sm:max-w-md md:max-w-2xl drop-shadow-md">
-        I&apos;m an Electrical & Computer Engineering graduate from the University of Patras.
-        I love building cool projects!
+        I&apos;m an Electrical & Computer Engineering graduate.
+        Explore my portfolio!
       </p>
 
       {/* --- Explore Button --- */}
