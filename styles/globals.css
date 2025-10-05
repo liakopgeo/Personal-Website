@@ -5,12 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Removed @theme inline because it’s not standard CSS */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -30,4 +25,3 @@ html {
   scroll-behavior: smooth;       /* Smooth scroll for anchor links */
   scroll-padding-top: 80px;      /* Adjust this to match your navbar height */
 }
-
