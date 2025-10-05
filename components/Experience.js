@@ -21,7 +21,7 @@ export default function Experience() {
       role: "Integrated Master, Electrical & Computer Engineering",
       duration: "Oct 2016 - Jun 2024",
       description:
-        "Courses: Algorithms, OOP in Python, Operating Systems, Data Structures, Networking. Thesis: Implementation of an IEEE 802.11-like MAC protocol using Arduino and nRF24L01 modules. Grade: 6.69/10."
+        "Courses: Algorithms, OOP in Python, Operating Systems, Data Structures, Data Mining, C, Computer & Network Security, Information Retrieval, Communications Networks, Databases, Web Programming, Artificial Intelligence. Thesis: Implementation of an IEEE 802.11-like MAC protocol using Arduino and nRF24L01 modules (Thesis Grade 10/10). Grade: 6.69/10."
     }
   ];
 
