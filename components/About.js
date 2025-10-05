@@ -11,13 +11,13 @@ export default function About() {
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-100">About Me</h2>
               <p className="text-sm sm:text-base text-gray-300 mb-3">
-                Hi! I&apos;m George Liakopoulos, an Electrical & Computer Engineering graduate from the University of Patras...
+                Hi! I&apos;m George Liakopoulos, an Electrical & Computer Engineering graduate from the University of Patras.
               </p>
               <p className="text-sm sm:text-base text-gray-300 mb-3">
-                I have hands-on experience from my time serving in the Hellenic Army IT Research Office...
+                I have hands-on experience from my time serving in the Hellenic Army IT Research Office.
               </p>
               <p className="text-sm sm:text-base text-gray-300">
-                In my free time, I enjoy learning about new technologies, experimenting with personal projects...
+                In my free time, I enjoy learning about new technologies, experimenting with personal projects.
               </p>
             </div>
 
