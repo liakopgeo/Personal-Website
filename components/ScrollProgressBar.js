@@ -22,9 +22,10 @@ export default function ScrollProgressBar() {
         className="h-full transition-all duration-150 ease-out rounded-r-full"
         style={{
           width: `${scrollProgress}%`,
-          background: "linear-gradient(90deg, #bf8138, #d6a15c)",
+          background: "linear-gradient(90deg, #b8772f, #bf8138, #d6a15c)",
         }}
       />
     </div>
   );
 }
+

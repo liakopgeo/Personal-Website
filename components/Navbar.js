@@ -7,7 +7,8 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Logo */}
+        
+        {/* --- Logo --- */}
         <a href="#home" className="flex items-center space-x-2">
           <Image
             src="/logo.png"
@@ -18,15 +19,15 @@ export default function Navbar() {
           />
         </a>
 
-        {/* Desktop Menu */}
+        {/* --- Desktop Menu --- */}
         <ul className="hidden md:flex items-center space-x-6 text-gray-800 font-medium">
-          <li><a href="#home" className="hover:text-indigo-600 transition">Home</a></li>
-          <li><a href="#about" className="hover:text-indigo-600 transition">About</a></li>
-          <li><a href="#experience" className="hover:text-indigo-600 transition">Experience</a></li>
-          <li><a href="#contact" className="hover:text-indigo-600 transition">Contact</a></li>
+          <li><a href="#home" className="hover:text-[#bf8138] transition">Home</a></li>
+          <li><a href="#about" className="hover:text-[#bf8138] transition">About</a></li>
+          <li><a href="#experience" className="hover:text-[#bf8138] transition">Experience</a></li>
+          <li><a href="#contact" className="hover:text-[#bf8138] transition">Contact</a></li>
         </ul>
 
-        {/* Resume Button */}
+        {/* --- Resume Button (Desktop) --- */}
         <a
           href="/GeorgeLiakopoulos_CV.pdf"
           target="_blank"
@@ -36,7 +37,7 @@ export default function Navbar() {
           View Resume
         </a>
 
-        {/* Mobile Menu Button */}
+        {/* --- Mobile Menu Button --- */}
         <button
           className="md:hidden flex flex-col justify-center items-center space-y-1"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -47,14 +48,14 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* --- Mobile Menu --- */}
       {menuOpen && (
         <div className="md:hidden bg-white shadow-lg border-t">
           <ul className="flex flex-col items-center py-4 space-y-4 text-gray-800 font-medium">
-            <li><a href="#home" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Home</a></li>
-            <li><a href="#about" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">About</a></li>
-            <li><a href="#experience" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Experience</a></li>
-            <li><a href="#contact" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Contact</a></li>
+            <li><a href="#home" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">Home</a></li>
+            <li><a href="#about" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">About</a></li>
+            <li><a href="#experience" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">Experience</a></li>
+            <li><a href="#contact" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">Contact</a></li>
             <li>
               <a
                 href="/GeorgeLiakopoulos_CV.pdf"
@@ -71,5 +72,6 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
 
