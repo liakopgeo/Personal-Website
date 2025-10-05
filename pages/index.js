@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
@@ -6,7 +7,12 @@ import Contact from "../components/Contact";
 
 export default function Home() {
   return (
-    <div className="scroll-smooth">
+    <div>
+      <Head>
+        <title>George Liakopoulos | Portfolio</title>  {/* Tab name */}
+        <link rel="icon" href="/logo.png" />       {/* Tab logo */}
+      </Head>
+
       <Navbar />
       <Hero />
       <About />
