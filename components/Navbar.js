@@ -8,10 +8,10 @@ export default function Navbar() {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         
-        {/* --- Logo (clickable, links to #home) --- */}
+        {/* --- Logo --- */}
         <a href="#home" className="flex items-center space-x-2">
           <Image
-            src="/logo.png" // Place logo.png inside /public
+            src="/logo.png"
             alt="George Liakopoulos Logo"
             width={45}
             height={45}
@@ -29,14 +29,12 @@ export default function Navbar() {
 
         {/* --- Resume Button (Desktop) --- */}
         <a
-          href="/GeorgeLiakopoulosCV.pdf"
+          href="/GeorgeLiakopoulos_CV.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-block rounded-md p-[2px] bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 transition"
+          className="hidden md:inline-block rounded-md px-4 py-2 border-2 border-[#bf8138] bg-white text-[#434343] font-semibold text-sm hover:opacity-90 transition"
         >
-          <span className="block rounded-md px-4 py-2 bg-black text-white font-semibold text-sm">
-            Resume
-          </span>
+          View Resume
         </a>
 
         {/* --- Mobile Menu Button --- */}
@@ -63,11 +61,9 @@ export default function Navbar() {
                 href="/GeorgeLiakopoulos_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-md p-[2px] bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 transition"
+                className="inline-block rounded-md px-4 py-2 border-2 border-[#bf8138] bg-white text-[#434343] font-semibold text-sm hover:opacity-90 transition"
               >
-                <span className="block rounded-md px-4 py-2 bg-black text-white font-semibold text-sm">
-                  Resume
-                </span>
+                View Resume
               </a>
             </li>
           </ul>
@@ -76,3 +72,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
