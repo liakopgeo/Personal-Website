@@ -26,7 +26,9 @@ export default function Experience() {
   return (
     <section id="experience" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center">Experience</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-black">
+          Experience
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {experiences.map((exp, idx) => (
             <ExperienceCard key={idx} {...exp} />
