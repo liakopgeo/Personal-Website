@@ -11,13 +11,13 @@ export default function About() {
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-100">About Me</h2>
               <p className="text-sm sm:text-base text-gray-300 mb-3">
-                Hi! I&apos;m George Liakopoulos, an Electrical & Computer Engineering graduate from the University of Patras.
+                Hi! I&apos;m George Liakopoulos, an Electrical & Computer Engineering graduate from the University of Patras...
               </p>
               <p className="text-sm sm:text-base text-gray-300 mb-3">
-                I have hands-on experience from my time serving in the Hellenic Army IT Research Office.
+                I have hands-on experience from my time serving in the Hellenic Army IT Research Office...
               </p>
               <p className="text-sm sm:text-base text-gray-300">
-                In my free time, I enjoy learning about new technologies, experimenting with personal projects.
+                In my free time, I enjoy learning about new technologies, experimenting with personal projects...
               </p>
             </div>
 
@@ -27,7 +27,7 @@ export default function About() {
                 href="https://www.linkedin.com/in/george-liakopoulos-a6a3b3364/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-blue-500 hover:text-blue-400 transition text-sm sm:text-base"
+                className="flex items-center gap-2 text-[#bf8138] hover:text-[#d89d5d] transition text-sm sm:text-base"
               >
                 <Linkedin size={24} /> LinkedIn
               </a>
@@ -46,9 +46,9 @@ export default function About() {
           <div className="flex-shrink-0 w-full sm:w-[250px] flex justify-center items-center">
             <div className="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] rounded-full overflow-hidden shadow-md border-2 border-[#bf8138]">
               <img
-                src="/profile.png"
+                src="/profile.jpg"
                 alt="My Photo"
-                className="w-full h-full object-contain scale-320"
+                className="w-full h-full object-contain scale-90"
               />
             </div>
           </div>
