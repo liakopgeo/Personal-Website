@@ -14,7 +14,7 @@ export default function About() {
                 Hi! I&apos;m George Liakopoulos, an Electrical & Computer Engineering graduate from the University of Patras.
               </p>
               <p className="text-sm sm:text-base text-gray-300 mb-3">
-                I currently work at the Institute of Biobedical Technology (INBIT) in Patras, as IT & Systems Support Engineer.
+                I currently work at the Institute of Biomedical Technology (INBIT) in Patras, as IT & Systems Support Engineer.
               </p>
               <p className="text-sm sm:text-base text-gray-300 mb-3">
                 I have hands-on experience from my time serving in the Hellenic Army IT Research Office. I have also developped various skills as an Audio Visual support technician in the Conference and Cultural Center of the University of Patras.
