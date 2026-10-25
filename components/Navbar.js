@@ -25,7 +25,7 @@ export default function Navbar() {
           {/* Increased font size to lg → sm:text-xl, and font-weight to font-semibold */}
           <li><a href="#home" className="hover:text-[#bf8138] transition">Home</a></li>
           <li><a href="#about" className="hover:text-[#bf8138] transition">About</a></li>
-          <li><a href="#experience" className="hover:text-[#bf8138] transition">Experience</a></li>
+          <li><a href="#experience" className="hover:text-[#bf8138] transition">Education & Experience</a></li>
           <li><a href="#contact" className="hover:text-[#bf8138] transition">Contact</a></li>
         </ul>
 
@@ -57,7 +57,7 @@ export default function Navbar() {
             {/* Increased font size and bold for mobile menu too */}
             <li><a href="#home" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">Home</a></li>
             <li><a href="#about" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">About</a></li>
-            <li><a href="#experience" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">Experience</a></li>
+            <li><a href="#experience" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">Education & Experience</a></li>
             <li><a href="#contact" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">Contact</a></li>
             <li>
               <a

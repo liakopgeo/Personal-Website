@@ -21,16 +21,6 @@ export default function Contact() {
             </a>
           </div>
 
-          {/* --- Phone --- */}
-          <div className="bg-[#2c2c2c] shadow-md rounded-xl p-4 sm:p-6 flex-1 hover:shadow-xl transition">
-            <h3 className="text-lg font-semibold mb-2 text-gray-100">Phone</h3>
-            <a
-              href="tel:+306948334710"
-              className="text-sm sm:text-base text-gray-300 hover:text-[#bf8138] transition"
-            >
-              +30 6948334710
-            </a>
-          </div>
 
           {/* --- Location --- */}
           <div className="bg-[#2c2c2c] shadow-md rounded-xl p-4 sm:p-6 flex-1 hover:shadow-xl transition">

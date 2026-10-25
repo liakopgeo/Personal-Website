@@ -10,14 +10,17 @@ export default function About() {
           <div className="flex-1 flex flex-col justify-between">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-100">About Me</h2>
-              <p className="text-sm sm:text-base text-gray-300 mb-3">
+                            <p className="text-sm sm:text-base text-gray-300 mb-3">
                 Hi! I&apos;m George Liakopoulos, an Electrical & Computer Engineering graduate from the University of Patras.
               </p>
               <p className="text-sm sm:text-base text-gray-300 mb-3">
-                I currently work at the Institute of Biomedical Technology (INBIT) in Patras, as IT & Systems Support Engineer.
+                I am currently pursuing an MSc in Business Administration (MBA) at the University of Patras, combining my engineering background with management and business skills.
               </p>
               <p className="text-sm sm:text-base text-gray-300 mb-3">
-                I have hands-on experience from my time serving in the Hellenic Army IT Research Office. I have also developped various skills as an Audio Visual support technician in the Conference and Cultural Center of the University of Patras.
+                I currently work at the Institute of Biomedical Technology (INBIT) in Patras, as an IT & Systems Support Engineer.
+              </p>
+              <p className="text-sm sm:text-base text-gray-300 mb-3">
+                Previously, I worked as an Audio Visual Support Technician at the Conference & Cultural Center of the University of Patras, and served in the IT Research Office of the Hellenic Army.
               </p>
               <p className="text-sm sm:text-base text-gray-300">
                 In my free time, I enjoy learning about new technologies and experimenting with personal projects.

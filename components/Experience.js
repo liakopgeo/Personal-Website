@@ -2,6 +2,21 @@ import ExperienceCard from "./ExperienceCard";
 
 export default function Experience() {
   const experiences = [
+
+    {
+      company: "University of Patras",
+      role: "MSc in Business Administration (MBA)",
+      duration: "Oct 2026 – Present",
+      description:
+        "Studying core areas of business, including management, strategy, finance and marketing. Developing analytical and decision-making skills through case studies and teamwork. Combining my engineering background with a business perspective to bridge technology and management."
+    },
+    {
+      company: "Institute of Biomedical Technology (INBIT), Patras",
+      role: "IT & Systems Support Engineer",
+      duration: "Nov 2025 – Present",
+      description:
+        "Provide IT and systems support across INBIT's projects and digital platforms, from day-to-day troubleshooting to keeping systems running reliably. Support users and training sessions for health-sector information systems, and contribute to the development of the institute's web presence."
+    },
     {
       company: "Hellenic Army, Ioannina",
       role: "IT Research Office",
@@ -12,7 +27,7 @@ export default function Experience() {
     {
       company: "Conference & Cultural Center, University of Patras",
       role: "Audio Visual Support Technician",
-      duration: "Oct 2017 - Mar 2026",
+      duration: "Oct 2017 - Sep 2026",
       description:
         "Supported cultural events, ensured seamless technical support during live and hybrid presentations. Managed livestreaming and digital broadcasting. Collaborated with event organizers and technical teams to deliver professional-quality online event experiences."
     },
@@ -29,7 +44,7 @@ export default function Experience() {
     <section id="experience" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-gray-100">
-          Experience
+          Education & Experience
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {experiences.map((exp, idx) => (
