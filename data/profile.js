@@ -2,7 +2,7 @@
 // the components only handle layout and styling.
 
 export const site = {
-  url: "https://personal-website-one-tau-17.vercel.app",
+  url: "https://georgeliakopoulos.com",
   cvPath: "/GeorgeLiakopoulos_CV.pdf?v=2026-11",
 };
 
