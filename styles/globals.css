@@ -1,72 +1,95 @@
 @import "tailwindcss";
 
-/* --- Root color variables --- */
-:root {
-  --background: #0a0a0a;  /* Dark background */
-  --foreground: #ededed;  /* Light text */
+/* Brand tokens: the charcoal and bronze of the GL logo on a cool paper white */
+@theme {
+  --color-paper: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-ink: #17202b;
+  --color-slate: #525d6b;
+  --color-line: #dde1e7;
+  --color-bronze: #bf8138;
+  --color-bronze-ink: #8a561b;
+  --color-graphite: #1c2229;
+  --color-graphite-line: #333c47;
+
+  --font-sans: "Archivo Variable", "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Force dark theme across devices */
 html {
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 88px;
 }
 
-/* Base styles */
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-text-size-adjust: 100%;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-stretch: 100%;
+  font-size: 1.0625rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
-  margin: 0;
-  padding: 0;
+  text-rendering: optimizeLegibility;
 }
 
-/* Prevent iOS/Safari auto-light mode overrides */
-@media (prefers-color-scheme: light) {
-  html,
-  body {
-    background-color: #0a0a0a !important;
-    color: #ededed !important;
-  }
+/* Display type: Archivo opened up to its wider cuts */
+.display {
+  font-stretch: 118%;
+  font-weight: 760;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+.heading {
+  font-stretch: 112%;
+  font-weight: 720;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  color: #ededed !important;
+::selection {
+  background: #f1dcc2;
+  color: var(--color-ink);
 }
 
-/* Paragraphs, lists, spans */
-p, li, span {
-  color: #cccccc;
+:focus-visible {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-/* --- Hero gradient animation --- */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Link underline that sits a little below the text */
+.text-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  transition: text-decoration-color 0.2s;
+}
+.text-link:hover {
+  text-decoration-color: currentColor;
 }
 
-.animate-gradient {
-  background: linear-gradient(
-    90deg,
-    #bf8138,
-    #d6a15c,
-    #b8772f,
-    #bf8138
-  );
-  background-size: 300% 300%;
-  animation: gradientShift 6s ease infinite;
-
-  /* Cross-browser gradient text */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+/* The one orchestrated moment: the hero diamond draws itself in on load */
+@keyframes draw {
+  from { stroke-dashoffset: var(--len); }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.draw {
+  stroke-dasharray: var(--len);
+  stroke-dashoffset: var(--len);
+  animation: draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+.rise {
+  opacity: 0;
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 
-
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .draw { animation: none; stroke-dashoffset: 0; }
+  .rise { animation: none; opacity: 1; }
+}

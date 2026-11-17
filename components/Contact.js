@@ -1,34 +1,53 @@
-export default function Contact() {
-  return (
-    <section id="contact" className="py-16 bg-black">
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center text-gray-100">
-          Contact Me
-        </h2>
-        <p className="text-sm sm:text-base text-center text-gray-300 mb-8">
-          Feel free to reach out! I’m open to opportunities, collaborations, or just a friendly chat.
-        </p>
+import Image from "next/image";
+import { person, site } from "../data/profile";
 
-        <div className="flex flex-col sm:flex-row sm:justify-center gap-4 sm:gap-6 text-center">
-          {/* --- Email --- */}
-          <div className="bg-[#2c2c2c] shadow-md rounded-xl p-4 sm:p-6 flex-1 hover:shadow-xl transition">
-            <h3 className="text-lg font-semibold mb-2 text-gray-100">Email</h3>
+export default function Contact() {
+  const year = new Date().getFullYear();
+  return (
+    <footer id="contact" className="bg-graphite text-white">
+      <div className="mx-auto max-w-6xl px-5 pb-10 pt-20 sm:px-8 lg:pt-24">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-7">
+            <h2 className="display text-[clamp(2.4rem,5.5vw,4.2rem)] text-white">Get in touch</h2>
+            <p className="mt-5 max-w-md text-[1.1rem] text-white/70">
+              The quickest way to reach me is by email, or send me a message on LinkedIn.
+            </p>
             <a
-              href="mailto:liakopgeo@gmail.com"
-              className="text-sm sm:text-base text-gray-300 hover:text-[#bf8138] transition"
+              href={`mailto:${person.email}`}
+              className="mt-8 inline-block break-all text-[clamp(1.35rem,2.6vw,1.9rem)] font-semibold text-white underline decoration-bronze decoration-2 underline-offset-[10px] transition-colors hover:text-[#e7c79f]"
             >
-              liakopgeo@gmail.com
+              {person.email}
             </a>
           </div>
 
+          <dl className="self-end lg:col-span-5">
+            {[
+              { label: "LinkedIn", value: "George Liakopoulos", href: person.linkedin },
+              { label: "GitHub", value: "liakopgeo", href: person.github },
+              { label: "CV", value: "View as PDF", href: site.cvPath },
+              { label: "Location", value: person.location },
+            ].map((row) => (
+              <div key={row.label} className="grid grid-cols-[7rem_1fr] border-b border-graphite-line py-3.5 first:border-t">
+                <dt className="text-white/55">{row.label}</dt>
+                <dd>
+                  {row.href ? (
+                    <a href={row.href} target="_blank" rel="noopener noreferrer" className="text-link text-white">
+                      {row.value}
+                    </a>
+                  ) : (
+                    <span className="text-white">{row.value}</span>
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
 
-          {/* --- Location --- */}
-          <div className="bg-[#2c2c2c] shadow-md rounded-xl p-4 sm:p-6 flex-1 hover:shadow-xl transition">
-            <h3 className="text-lg font-semibold mb-2 text-gray-100">Location</h3>
-            <p className="text-sm sm:text-base text-gray-300">Patras, Greece</p>
-          </div>
+        <div className="mt-20 flex items-center gap-3 border-t border-graphite-line pt-6 text-[0.9rem] text-white/50">
+          <Image src="/logo.png" alt="" width={22} height={23} className="opacity-80 brightness-[1.6]" />
+          <span>© {year} {person.name}</span>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }

@@ -1,61 +1,42 @@
-import ExperienceCard from "./ExperienceCard";
+import Section from "./Section";
+import { experience } from "../data/profile";
+
+function Diamond({ filled }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={`absolute left-0 top-[0.55rem] block h-[11px] w-[11px] -translate-x-1/2 rotate-45 border-[2.5px] ${
+        filled ? "border-bronze bg-bronze" : "border-[#4a4f57] bg-paper"
+      }`}
+    />
+  );
+}
 
 export default function Experience() {
-  const experiences = [
-
-    {
-      company: "University of Patras",
-      role: "MSc in Business Administration (MBA)",
-      duration: "Oct 2026 – Present",
-      description:
-        "Studying core areas of business, including management, strategy, finance and marketing. Developing analytical and decision-making skills through case studies and teamwork. Combining my engineering background with a business perspective to bridge technology and management."
-    },
-    {
-      company: "Institute of Biomedical Technology (INBIT), Patras",
-      role: "IT & Systems Support Engineer",
-      duration: "Nov 2025 – Present",
-      description:
-        "Provide IT and systems support across INBIT's projects and digital platforms, from day-to-day troubleshooting to keeping systems running reliably. Support users and training sessions for health-sector information systems, and contribute to the development of the institute's web presence."
-    },
-    {
-      company: "Hellenic Army, Ioannina",
-      role: "IT Research Office",
-      duration: "Jan 2025 – Aug 2025",
-      description:
-        "Served in the IT Research Office of the Electronic Warfare Signal Corps. Gained hands-on experience in technical troubleshooting and operational support within a demanding environment. Awarded the honorary rank of Lance Corporal by the Brigade Commander in recognition of performance and contribution."
-    },
-    {
-      company: "Conference & Cultural Center, University of Patras",
-      role: "Audio Visual Support Technician",
-      duration: "Oct 2017 - Sep 2026",
-      description:
-        "Supported cultural events, ensured seamless technical support during live and hybrid presentations. Managed livestreaming and digital broadcasting. Collaborated with event organizers and technical teams to deliver professional-quality online event experiences."
-    },
-    {
-      company: "University of Patras",
-      role: "Integrated Master, Electrical & Computer Engineering",
-      duration: "Oct 2016 - Jun 2024",
-      description:
-        "Courses: Algorithms, OOP in Python, Operating Systems, Data Structures, Data Mining, C, Computer & Network Security, Information Retrieval, Communications Networks, Databases, Web Programming, Artificial Intelligence. Thesis: Implementation of an IEEE 802.11-like MAC protocol using Arduino and nRF24L01 modules (Thesis Grade 10/10). Grade: 6.69/10."
-    }
-  ];
-
   return (
-    <section id="experience" className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-gray-100">
-          Education & Experience
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {experiences.map((exp, idx) => (
-            <ExperienceCard
-              key={idx}
-              {...exp}
-              companyColor="#bf8138" // <— Pass the gold color to ExperienceCard
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+    <Section id="experience" title="Experience" intro="Nearly nine years of hands-on technical work, from live events to IT and systems support.">
+      <ol className="relative ml-[5px] border-l-2 border-line">
+        {experience.map((job) => (
+          <li key={job.role} className="relative pb-12 pl-8 last:pb-0 sm:pl-10">
+            <Diamond filled={job.end === "Present"} />
+            <p className="text-[0.95rem] text-slate">
+              <time>{job.start}</time> – <time>{job.end}</time>
+              {job.note && <span> &nbsp;/&nbsp; {job.note}</span>}
+            </p>
+            <h3 className="heading mt-1 text-[1.35rem] text-ink">{job.role}</h3>
+            <p className="mt-0.5 font-medium text-bronze-ink">
+              {job.org}, {job.place}
+            </p>
+            <ul className="mt-4 max-w-[40rem] space-y-2.5 text-ink/85">
+              {job.points.map((pt) => (
+                <li key={pt} className="relative pl-5 before:absolute before:left-0 before:top-[0.72em] before:h-[2px] before:w-2.5 before:bg-line">
+                  {pt}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
+    </Section>
   );
 }

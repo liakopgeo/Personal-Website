@@ -1,77 +1,100 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import { person, site } from "../data/profile";
+
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
+  { href: "#skills", label: "Skills" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="bg-black shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
-        {/* Increased py from 3 → 5 for taller navbar */}
-
-        {/* --- Logo --- */}
-        <a href="#home" className="flex items-center space-x-2">
-          <Image
-            src="/GLlogo.png"
-            alt="George Liakopoulos Logo"
-            width={50}
-            height={50}
-            className="rounded-md hover:opacity-80 transition"
-          />
+    <header
+      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled || open ? "bg-paper/90 backdrop-blur-md border-line" : "bg-paper border-transparent"
+      }`}
+    >
+      <nav className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 sm:px-8" aria-label="Main">
+        <a href="#home" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          <Image src="/logo.png" alt="" width={34} height={35} priority />
+          <span className="heading text-[1.05rem] text-ink">{person.name}</span>
         </a>
 
-        {/* --- Desktop Menu --- */}
-        <ul className="hidden md:flex items-center space-x-8 text-gray-200 font-semibold text-lg sm:text-xl">
-          {/* Increased font size to lg → sm:text-xl, and font-weight to font-semibold */}
-          <li><a href="#home" className="hover:text-[#bf8138] transition">Home</a></li>
-          <li><a href="#about" className="hover:text-[#bf8138] transition">About</a></li>
-          <li><a href="#experience" className="hover:text-[#bf8138] transition">Education & Experience</a></li>
-          <li><a href="#contact" className="hover:text-[#bf8138] transition">Contact</a></li>
+        <ul className="hidden items-center gap-7 text-[0.95rem] text-slate lg:flex">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a href={l.href} className="transition-colors hover:text-ink">
+                {l.label}
+              </a>
+            </li>
+          ))}
         </ul>
 
-        {/* --- Resume Button (Desktop) --- */}
         <a
-          href="/GeorgeLiakopoulos_CV.pdf"
+          href={site.cvPath}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-block rounded-md px-4 py-2 border-2 border-[#bf8138] bg-gray-900 text-gray-200 font-semibold text-base sm:text-lg hover:opacity-90 transition"
+          className="hidden rounded-[3px] bg-ink px-4 py-2 text-[0.92rem] font-semibold text-white transition-colors hover:bg-bronze-ink lg:inline-block"
         >
-          View Resume
+          View CV
         </a>
 
-        {/* --- Mobile Menu Button --- */}
         <button
-          className="md:hidden flex flex-col justify-center items-center space-y-1"
-          onClick={() => setMenuOpen(!menuOpen)}
+          type="button"
+          className="-mr-2 flex h-11 w-11 items-center justify-center lg:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen((v) => !v)}
         >
-          <span className={`block w-6 h-0.5 bg-gray-200 transition-transform ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`}></span>
-          <span className={`block w-6 h-0.5 bg-gray-200 ${menuOpen ? "opacity-0" : ""}`}></span>
-          <span className={`block w-6 h-0.5 bg-gray-200 transition-transform ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}></span>
+          <span className="relative block h-3.5 w-6">
+            <span className={`absolute left-0 top-0 h-[2px] w-6 bg-ink transition-transform ${open ? "translate-y-[6px] rotate-45" : ""}`} />
+            <span className={`absolute left-0 top-[6px] h-[2px] w-6 bg-ink transition-opacity ${open ? "opacity-0" : ""}`} />
+            <span className={`absolute left-0 top-[12px] h-[2px] w-6 bg-ink transition-transform ${open ? "-translate-y-[6px] -rotate-45" : ""}`} />
+          </span>
         </button>
-      </div>
+      </nav>
 
-      {/* --- Mobile Menu --- */}
-      {menuOpen && (
-        <div className="md:hidden bg-black shadow-lg border-t border-gray-800">
-          <ul className="flex flex-col items-center py-5 space-y-4 text-gray-200 font-semibold text-lg">
-            {/* Increased font size and bold for mobile menu too */}
-            <li><a href="#home" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">Home</a></li>
-            <li><a href="#about" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">About</a></li>
-            <li><a href="#experience" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">Education & Experience</a></li>
-            <li><a href="#contact" onClick={() => setMenuOpen(false)} className="hover:text-[#bf8138] transition">Contact</a></li>
-            <li>
+      {open && (
+        <div id="mobile-menu" className="border-t border-line bg-paper lg:hidden">
+          <ul className="mx-auto max-w-6xl px-5 py-3 sm:px-8">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="block border-b border-line py-3.5 text-lg text-ink"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+            <li className="py-4">
               <a
-                href="/GeorgeLiakopoulos_CV.pdf"
+                href={site.cvPath}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-md px-4 py-2 border-2 border-[#bf8138] bg-gray-900 text-gray-200 font-semibold text-base sm:text-lg hover:opacity-90 transition"
+                className="block rounded-[3px] bg-ink px-4 py-3 text-center font-semibold text-white"
               >
-                View Resume
+                View CV
               </a>
             </li>
           </ul>
         </div>
       )}
-    </nav>
+    </header>
   );
 }
