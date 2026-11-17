@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://personal-website-one-tau-17.vercel.app/sitemap.xml
+Sitemap: https://georgeliakopoulos.com/sitemap.xml
