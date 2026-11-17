@@ -14,7 +14,7 @@ function Diamond({ filled }) {
 
 export default function Experience() {
   return (
-    <Section id="experience" title="Experience" intro="Nearly nine years of hands-on technical work, from live events to IT and systems support.">
+    <Section id="experience" title="Experience" intro="Over nine years of hands-on technical work, from live events to IT and systems support.">
       <ol className="relative ml-[5px] border-l-2 border-line">
         {experience.map((job) => (
           <li key={job.role} className="relative pb-12 pl-8 last:pb-0 sm:pl-10">

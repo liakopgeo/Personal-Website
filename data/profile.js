@@ -3,7 +3,7 @@
 
 export const site = {
   url: "https://georgeliakopoulos.com",
-  cvPath: "/GeorgeLiakopoulos_CV.pdf?v=2026-11",
+  cvPath: "/GeorgeLiakopoulos_CV.pdf?v=2026-11-17",
 };
 
 export const person = {
@@ -25,7 +25,7 @@ export const status = [
 ];
 
 export const about = [
-  "I'm an electrical and computer engineer from the University of Patras. For almost nine years I worked alongside my studies, running the audiovisual and live-streaming setup for conferences at the university's Conference & Cultural Center, and later supporting the IT Research Office during my military service.",
+  "I'm an electrical and computer engineer from the University of Patras. For over nine years I worked alongside my studies, running the audiovisual and live-streaming setup for conferences at the university's Conference & Cultural Center, and later supporting the IT Research Office during my military service.",
   "Today I work in IT and systems support at INBIT, where I write Python scripts that automate routine work, look after the institute's multilingual website and support hospitals using web-Praxis, the national medical equipment management system.",
   "Alongside work I'm studying for an MBA at the University of Patras. I'm drawn to roles where technology and business meet: understanding systems in depth, and the decisions they exist to serve.",
 ];
@@ -66,7 +66,7 @@ export const experience = [
     org: "Conference & Cultural Center, University of Patras",
     place: "Patras",
     start: "Oct 2017",
-    end: "Sep 2026",
+    end: "Nov 2026",
     note: "Part-time, alongside my studies",
     points: [
       "Ran the AV and IT setup for conferences, ceremonies and cultural events, including live and hybrid presentations.",
